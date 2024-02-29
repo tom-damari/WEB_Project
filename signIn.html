@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <title>Home</title>
+        <title>Sign In</title>
     </head>
 
     <body>
@@ -28,33 +28,42 @@
                         <li><a href="contactUs.html">צור קשר</a></li>
                         <li><a href="jewellery.html">תכשיטים</a></li>
                         <li><a href="ceramics.html">קרמיקה</a></li>
-                        <li><a href="studio.html" class="active">בית</a></li>
+                        <li><a href="studio.html">בית</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
 
         <section class="section-p1">
-            <div id="shopContainer">
-                <div id="shopCeramics">
-                    <h1>CERAMICS</h1>
-                    <a href="ceramics.html"><button class="white">SHOP NOW</button></a>
+            <form action="" method="get" id="form-signIn" class="form">
+                <div class="content2">
+                    <h2>יצירת חשבון</h2>
+                    <br>
+                    <div class="msg"></div>
+                    <label id="Fname"><b>שם פרטי</b></label>
+                    <input type="Fname" placeholder="הזן שם פרטי" name="Fname" autocomplete="on" required>
+                    <br>
+                    <label id="Lname"><b>שם משפחה</b></label>
+                    <input type="Lname" placeholder="הזן שם משפחה" name="Lname" autocomplete="on" required>
+                    <br>
+                    <label id="mail"><b>כתובת אימייל</b></label>
+                    <input type="email" placeholder="הזן כתובת האימייל" name="mail" autocomplete="on" required>
+                    <br>
+                    <label id="pnum"><b>מספר פלאפון</b></label>
+                    <input type="ILphone" placeholder="הזן מספר פלאפון" name="pnum" required>
+                    <br>
+                    <label id="psw"><b>סיסמה</b></label>
+                    <input type="password" placeholder="הזן סיסמה" name="psw" required>
+                    <br>
+                    <label id="bday"><b>תאריך לידה</b></label>
+                    <input type="date" placeholder="dd/mm/yyyy" name="bday" required>
+                    <br>
+                    <br>
+                    <input type="submit" id="signInButton" class="button" value="צור">
+                    <br>
+                    <br>
                 </div>
-                <div id="shopJewellery" class="section-p1">
-                    <h1>JEWELLERY</h1>
-                    <a href="jewellery.html"><button class="white">SHOP NOW</button></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="newsletter" class="section-p2 section-m">
-            <div class="newstext">
-                <h4>הרשמה לניוזלטר שלנו</h4>
-            </div>
-            <div class="newsletterForm">
-                <input type="email" placeholder="כתובת המייל שלך">
-                <button class="normal">הרשמה</button>
-            </div>
+            </form>
         </section>
 
         <footer class="section-p2">
@@ -100,6 +109,7 @@
         </footer>
 
         <script src="studio.js"></script>
+        <script src="signInForm.js"></script>
 
     </body>
 

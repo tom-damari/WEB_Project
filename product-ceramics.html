@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <title>Home</title>
+        <title>Product</title>
     </head>
 
     <body>
@@ -27,33 +27,43 @@
                         <li><a href="about.html">אודות</a></li>
                         <li><a href="contactUs.html">צור קשר</a></li>
                         <li><a href="jewellery.html">תכשיטים</a></li>
-                        <li><a href="ceramics.html">קרמיקה</a></li>
-                        <li><a href="studio.html" class="active">בית</a></li>
+                        <li><a href="ceramics.html" class="active">קרמיקה</a></li>
+                        <li><a href="studio.html">בית</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-
-        <section class="section-p1">
-            <div id="shopContainer">
-                <div id="shopCeramics">
-                    <h1>CERAMICS</h1>
-                    <a href="ceramics.html"><button class="white">SHOP NOW</button></a>
+        <section id="pro-ceramics-details" class="section-p1">
+            <h3>כלי לעציץ האנוי בצבע ירוק משגע</h3>
+            <div class = "pro-details">
+            <div class="single-pro-img">
+                <img src="products/cermics_product1_img3.jpg" id="main-img" alt="">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="products/cermics_product1_img1.jpg" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="products/cermics_product1_img2.jpg" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="products/cermics_product1_img3.jpg" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="products/cermics_product1_img4.jpg" class="small-img" alt="">
+                    </div>
                 </div>
-                <div id="shopJewellery" class="section-p1">
-                    <h1>JEWELLERY</h1>
-                    <a href="jewellery.html"><button class="white">SHOP NOW</button></a>
-                </div>
+            </div>
             </div>
         </section>
 
-        <section id="newsletter" class="section-p2 section-m">
-            <div class="newstext">
-                <h4>הרשמה לניוזלטר שלנו</h4>
-            </div>
-            <div class="newsletterForm">
-                <input type="email" placeholder="כתובת המייל שלך">
-                <button class="normal">הרשמה</button>
+        <section>
+            <div class="single-pro-details">
+                <h3>₪ 250</h3>
+                <h4 id="productStatus">במלאי</h4>
+                <button class="normal">הוסף לעגלה</button>
+                <h4 class="pro-description">תיאור הפריט</h4>
+                <p>!הכלי לעציצים שלא יפסיקו להחמיא לך עליו בצבע ירוק משגע</p>
+                <p>כל כלי קרמיקה שמוצג למכירה נעשה בעבודת יד ולכן מדובר בפריט יחיד במינו</p>
             </div>
         </section>
 
@@ -99,6 +109,7 @@
             </div>
         </footer>
 
+        <script src="product.js"></script>
         <script src="studio.js"></script>
 
     </body>

@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <title>Home</title>
+        <title>Log In</title>
+        <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- include the Google Platform JavaScript library-->
+        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     </head>
 
     <body>
@@ -28,33 +30,33 @@
                         <li><a href="contactUs.html">צור קשר</a></li>
                         <li><a href="jewellery.html">תכשיטים</a></li>
                         <li><a href="ceramics.html">קרמיקה</a></li>
-                        <li><a href="studio.html" class="active">בית</a></li>
+                        <li><a href="studio.html">בית</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
 
         <section class="section-p1">
-            <div id="shopContainer">
-                <div id="shopCeramics">
-                    <h1>CERAMICS</h1>
-                    <a href="ceramics.html"><button class="white">SHOP NOW</button></a>
+             <form id="form-login" class="form">
+                <div class="content2">
+                    <h2>התחברות</h2>
+                    <div class="msg"></div>
+                    <br>
+                    <label id="mail"><b>כתובת מייל</b></label>
+                    <input type="email" placeholder="הזן כתובת מייל" name="mail" autocomplete="on" required>
+                    <br>
+                    <label id="psw"><b>סיסמה</b></label>
+                    <input type="password" placeholder="הזן סיסמה" name="password" required>
+                    <a id="forgot-psw" href="forgotPassword.html">?שכחת את הסיסמה שלך</a>
+                    <br>
+                    <br>
+                    <input type="submit" id="logInButton" class="button" value="התחבר">
+                    <a href="signIn.html" id="signInOption">הרשמה</a>
+                    <br>
+                    <br>
+                    <div class="g-signin2" data-height="30" data-onsuccess="onGoogleSignIn"></div>
                 </div>
-                <div id="shopJewellery" class="section-p1">
-                    <h1>JEWELLERY</h1>
-                    <a href="jewellery.html"><button class="white">SHOP NOW</button></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="newsletter" class="section-p2 section-m">
-            <div class="newstext">
-                <h4>הרשמה לניוזלטר שלנו</h4>
-            </div>
-            <div class="newsletterForm">
-                <input type="email" placeholder="כתובת המייל שלך">
-                <button class="normal">הרשמה</button>
-            </div>
+            </form>
         </section>
 
         <footer class="section-p2">
@@ -100,6 +102,7 @@
         </footer>
 
         <script src="studio.js"></script>
+        <script src="logInForm.js"></script>
 
     </body>
 

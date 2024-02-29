@@ -3,9 +3,13 @@
 
     <head>
         <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <title>Home</title>
+        <title>Shopping Cart</title>
     </head>
 
     <body>
@@ -28,33 +32,61 @@
                         <li><a href="contactUs.html">צור קשר</a></li>
                         <li><a href="jewellery.html">תכשיטים</a></li>
                         <li><a href="ceramics.html">קרמיקה</a></li>
-                        <li><a href="studio.html" class="active">בית</a></li>
+                        <li><a href="studio.html">בית</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-        <section class="section-p1">
-            <div id="shopContainer">
-                <div id="shopCeramics">
-                    <h1>CERAMICS</h1>
-                    <a href="ceramics.html"><button class="white">SHOP NOW</button></a>
-                </div>
-                <div id="shopJewellery" class="section-p1">
-                    <h1>JEWELLERY</h1>
-                    <a href="jewellery.html"><button class="white">SHOP NOW</button></a>
-                </div>
+        <section id="cart" class="section-p1">
+            <h2>סל קניות</h2>
+            <div class="hide-empty">
+                <p>סל הקניות שלך ריק כרגע</p>
+                <p>היט איט 3></p>
             </div>
-        </section>
-
-        <section id="newsletter" class="section-p2 section-m">
-            <div class="newstext">
-                <h4>הרשמה לניוזלטר שלנו</h4>
-            </div>
-            <div class="newsletterForm">
-                <input type="email" placeholder="כתובת המייל שלך">
-                <button class="normal">הרשמה</button>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>הסר</th>
+                        <th>סה"כ</th>
+                        <th>כמות</th>
+                        <th>מחיר</th>
+                        <th>מוצר</th>
+                        <th>תמונה</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#"></a><i class="far fa-times-circle"></i></td>
+                        <td>₪ 250</td>
+                        <td><input type="number" value="1" max="1" readonly></td> <!--ceramic items are one of a kind-->
+                        <td>₪ 250</td>
+                        <td>כלי רחב לעציצים בצבע שחור</td>
+                        <td><img src="products/blackWideBowlWithCactus.jpeg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"></a><i class="far fa-times-circle"></i></td>
+                        <td>₪ 250</td>
+                        <td><input type="number" value="1" min="0" max="3"></td> <!--ceramic items are one of a kind-->
+                        <td>₪ 250</td>
+                        <td>שרשרת חרוזים קצרה עם תליון צדף זהב</td>
+                        <td><img src="jewellery/goldNecklessWithShellAndStones.jpg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"></a><i class="far fa-times-circle"></i></td>
+                        <td>₪ 250</td>
+                        <td><input type="number" value="1" max="1" readonly></td> <!--ceramic items are one of a kind-->
+                        <td>₪ 250</td>
+                        <td>כלי גבוה לעציצים בצבע חמרה</td>
+                        <td><img src="products/cleyHighPlantVessel.jpeg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+            <span>
+                <h3> :סך ביניים </h3>
+                <h3>₪ 750 </h3>
+            </span>
+            <button class="normal">מעבר לקופה</button>
         </section>
 
         <footer class="section-p2">
@@ -100,6 +132,7 @@
         </footer>
 
         <script src="studio.js"></script>
+        <script src="shoppingCart.js"></script>
 
     </body>
 

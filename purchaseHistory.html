@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <title>Home</title>
+        <title>Account</title>
     </head>
 
     <body>
@@ -28,32 +28,80 @@
                         <li><a href="contactUs.html">צור קשר</a></li>
                         <li><a href="jewellery.html">תכשיטים</a></li>
                         <li><a href="ceramics.html">קרמיקה</a></li>
-                        <li><a href="studio.html" class="active">בית</a></li>
+                        <li><a href="studio.html">בית</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-        <section class="section-p1">
-            <div id="shopContainer">
-                <div id="shopCeramics">
-                    <h1>CERAMICS</h1>
-                    <a href="ceramics.html"><button class="white">SHOP NOW</button></a>
-                </div>
-                <div id="shopJewellery" class="section-p1">
-                    <h1>JEWELLERY</h1>
-                    <a href="jewellery.html"><button class="white">SHOP NOW</button></a>
-                </div>
+        <section id="my-account" class="section-p1">
+            <div class="container-upper-buttons">
+                <a href="#"><button class="normal">התנתקות</button></a>
+                <button class="normal">עדכון פרטי חשבון</button>
+            </div>
+            <h2>החשבון שלי</h2>
+            <div class="account-details">
+                <h3 id="full-name">כיף שחזרת אלינו, תום</h3>
+            </div>
+            <div class="hide-empty">
+                <p>אין לך עדיין הזמנות</p>
+                <p>גו שופינג 3></p>
             </div>
         </section>
 
-        <section id="newsletter" class="section-p2 section-m">
-            <div class="newstext">
-                <h4>הרשמה לניוזלטר שלנו</h4>
+        <section id="order-history" class="section-p2">
+            <h2>ההזמנות שלי</h2>
+            <div class="single-order-details">
+                <div class="total">
+                    <p>יום ראשון 19, ינואר 2024</p>
+                    <p>נשלח</p>
+                </div>
+                <span>
+                    <h3>:סך התשלום</h3>
+                    <h3>₪ 500</h3>
+                </span>
+                <div class="pro-container">
+                    <div class="pro">
+                        <img src="jewellery/jewellery_pearls_product1_img1.jpg" alt="Pearls Combined with Falling Shell Silver Neckless">
+                        <div class="des">
+                            <p>שרשרת כסף עם פנינים</p>
+                            <h4>₪ 250</h4>
+                        </div>
+                    </div>
+                    <div class="pro">
+                        <img src="products/blackWideBowlWithCactus.jpeg" alt="Pearls Combined with Falling Shell Silver Neckless">
+                        <div class="des">
+                            <p>כלי רחב לעציצים בצבע שחור</p>
+                            <h4>₪ 250</h4>
+                        </div>
+                    </div>
+                    <div class="pro">
+                        <img src="products/cleyHighPlantVessel.jpeg" alt="Clay High Plant Vessel">
+                        <div class="des">
+                            <p>כלי גבוה לעציצים בצבע חמרה</p>
+                            <h4>₪ 250</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="newsletterForm">
-                <input type="email" placeholder="כתובת המייל שלך">
-                <button class="normal">הרשמה</button>
+            <div class="single-order-details">
+                <div class="total">
+                    <p>יום ראשון 12, ינואר 2024</p>
+                    <p>נשלח</p>
+                </div>
+                <span>
+                    <h3>:סך התשלום</h3>
+                    <h3>₪ 250</h3>
+                </span>
+                <div class="pro-container">
+                    <div class="pro">
+                        <img src="jewellery/jewellery_pearls_product1_img1.jpg" alt="Pearls Combined with Falling Shell Silver Neckless">
+                        <div class="des">
+                            <p>שרשרת כסף עם פנינים</p>
+                            <h4>₪ 250</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
