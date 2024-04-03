@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('account.static', filename='css/account.css') }}">
+{% endblock %}
+
+{% block main %}
+    <section id="my-account" class="section-p1">
+    {% if curr_customer.firstName | regex_match('^[\u0590-\u05FF\s]+$') %}
+        <div class="container-upper-buttons">
+            <a href="/logout"><button class="normal">התנתקות</button></a>
+            <button class="normal updateUserDetailsButton">עדכון פרטי חשבון</button>
+        </div>
+        <h2>החשבון שלי</h2>
+        <div class="account-details-hebrew">
+            <h3>כיף שחזרת אלינו {{ curr_customer.firstName }}</h3>
+        </div>
+    {% else %}
+        <div class="container-upper-buttons">
+            <a href="/logout"><button class="normal">Logout</button></a>
+            <button class="normal updateUserDetailsButton">Update Account Details</button>
+        </div>
+        <h2>My Account</h2>
+        <div class="account-details">
+            <h3>Welcome Back {{ curr_customer.firstName }}!</h3>
+        </div>
+    {% endif %}
+    </section>
+
+    <section id="order-history" class="section-p2">
+        <h2>ההזמנות שלי</h2>
+        {% if curr_customer.firstName | regex_match('^[\u0590-\u05FF\s]+$') %}
+            {% if order_list|length > 0 %}
+                {% for o in order_list %}
+                    <div class="single-order-details">
+                        <div class="total">
+                            <p>{{ o.time }}</p>
+                            <p>{{ o.status }}</p>
+                        </div>
+                        <span>
+                            <h3>:סך התשלום</h3>
+                            <h3>₪ {{ o.totalAmount }}</h3>
+                        </span>
+                        <div class="pro-container">
+                            {% for item in o.get('items') %}
+                                <div class="pro">
+                                    <img src="{{ item.photoPath }}" alt="">
+                                    <div class="des">
+                                        <p>{{ item.productName }}</p>
+                                        <h4>{{ item.quantity }}  :כמות</h4>
+                                        <h4>₪ {{ item.sumPrice }} :סה"כ</h4>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="account-details-hebrew">
+                    <p>אין לך עדיין הזמנות</p>
+                    <p><i class="fa fa-heart heart-icon"></i>גו שופינג </p>
+                </div>
+            {% endif %}
+        {% else %}
+            {% if order_list|length > 0 %}
+                <h2>My Orders</h2>
+                <div class="single-order-details">
+                    {% for o in order_list %}
+                        <div class="total">
+                            <p>{{ o.time }}</p>
+                            <p>{{ o.status }}</p>
+                        </div>
+                        <span>
+                            <h3>Total Payment Amount:</h3>
+                            <h3>₪ {{ o.totalAmount }}</h3>
+                        </span>
+                        <div class="pro-container">
+                            {% for item in o.items %}
+                                <div class="pro">
+                                    <img src="{{ item.photoPath }}" alt="">
+                                    <div class="des">
+                                        <p>{{ item.productName }}</p>
+                                        <h4>₪ {{ item.sumPrice }}</h4>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="account-details">
+                    <p>Your Order History is Empty</p>
+                    <p>Go Shopping! <i class="fa fa-heart"></i></p>
+                </div>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('account.static', filename='js/account.js') }}"></script>
+{% endblock %}

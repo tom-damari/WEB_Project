@@ -1,0 +1,125 @@
+/*ABOUT PAGE*/
+
+.container {
+    max-width: 960px;
+    margin: auto;
+}
+#showcase {
+    height: 80px;
+}
+#showcase h2 {
+    font-size: 30px;
+    line-height: 0.1;
+    position: relative;
+    animation: heading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes heading {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 100px;
+    }
+}
+.content {
+    display: inline-block;
+    position: relative;
+    animation-name: content;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    border: 5px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 10px;
+}
+.content p {
+    line-height: 2;
+    margin-bottom: 20px;
+}
+@keyframes content {
+    0% {
+        left: -1000px;
+    }
+   100% {
+        left:0;
+    }
+}
+
+#facebookIcon, #instagramIcon, #whatsappLinkIcon {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px;
+    opacity: 0;
+    /*animation*/
+    animation-name: Icon;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    /*transition*/
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+@keyframes Icon {
+    0% {opacity: 0}
+    100%{opacity: 100%}
+}
+#facebookIcon {
+    color: #282be0;
+}
+#instagramIcon {
+    color: #943aa6;
+}
+#whatsappLinkIcon {
+    color: #47b74d;
+}
+#videos {
+    gap: 10px;
+    margin-top: 20px;
+}
+#video2{
+    border-radius: 60px;
+    top: 20px
+}
+#video1{
+    border-radius: 60px;
+    top: 500cm;
+    margin-right: 30px
+}
+
+/* MATCH SCREEN TO TABLET PLATFORM */
+@media (max-width: 799px) {
+    #showcase {
+        font-size: 40px;
+    }
+    .content {
+        min-width: 400px;
+        font-size: 14px;
+        transition: 0.3s ease;
+    }
+    #videos {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 400px;
+        transition: 0.3s ease;
+    }
+    #video1{
+        border-radius: 20px;
+        top: 500cm;
+        margin-right: 10px;
+        height: 300px;
+    }
+    #video2{
+        border-radius: 20px;
+        top: 20px;
+        height: 300px;
+    }
+    #videos iframe {
+        min-width: 100px;
+        min-height: 150px;
+        transition: 0.3s ease;
+    }
+}

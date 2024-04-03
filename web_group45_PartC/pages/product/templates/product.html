@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Product{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('product.static', filename='css/product.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+{% endblock %}
+
+{% block main %}
+    <section id="pro-ceramics-details" class="section-p1">
+        <h3>{{ product.productName }}</h3>
+        <div class = "pro-details">
+            <div class="single-pro-img">
+                {% if product.photoPath %}
+                    <img src="{{ product.photoPath[0] }}" id="main-img" alt="">
+                {% endif %}
+                {% if product.photoPath|length > 1 %}
+                    <div class="small-img-group">
+                        {% for photo in product.photoPath %}
+                            <div class="small-img-col">
+                                <img src="{{ photo }}" class="small-img" alt="">
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="single-pro-details">
+            <h3>₪ {{ product.price }}</h3>
+            {% if product.status == 'זמין' %}
+                <h4 class="productStatus">{{ product.status }}</h4>
+                <button id="addToCart" class="normal" onclick="window.location.href='/product/{{product.category}}/{{product.productName}}/addToCart'">הוסף לעגלה</button>
+            {% else %}
+                <h4 class="productStatus">SOLD OUT</h4>
+                <p id="contact">
+                    <strong>
+                        <a id="whatsappLinkIcon" href="https://api.whatsapp.com/send?phone=972544428090&text=%D7%9E%D7%99%D7%9B%D7%9C%20%D7%93%D7%9E%D7%90%D7%A8%D7%99%20%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95%20%D7%9C%D7%A7%D7%A8%D7%9E%D7%99%D7%A7%D7%94%20%D7%95%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%D7%9D"><i class="fab fa-whatsapp"></i></a>
+                        להזמנות אישיות מוזמנים ליצור איתי קשר דרך מספר הפלאפון
+                        0544428090
+                    </strong>
+                </p>
+            {% endif %}
+            <h4 class="pro-description">תיאור הפריט</h4>
+            {% for des in product.description %}
+                <p>{{ des }}</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('product.static', filename='js/product.js') }}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{% endblock %}
+

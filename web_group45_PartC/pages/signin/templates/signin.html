@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}SignIn{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('signin.static', filename='css/signin.css') }}">
+{% endblock %}
+
+
+{% block main %}
+    <section class="section-p1">
+        {% if message %}
+            <p class="error">{{ message }}</p>
+        {% endif %}
+        <form id="form-signIn" class="form" method="POST" action="/signin">
+            <div class="content2">
+                <h2>יצירת חשבון</h2>
+                <div class="msg"></div>
+                <br>
+                <label id="Fname"><b>שם פרטי</b></label>
+                <input type="text" placeholder="הזן שם פרטי" name="Fname" autocomplete="on" required>
+                <br>
+                <label id="Lname"><b>שם משפחה</b></label>
+                <input type="text" placeholder="הזן שם משפחה" name="Lname" autocomplete="on" required>
+                <br>
+                <label id="mail"><b>כתובת אימייל</b></label>
+                <input type="email" placeholder="הזן כתובת האימייל" name="email" autocomplete="on" required>
+                <br>
+                <label id="pnum"><b>מספר פלאפון</b></label>
+                <input type="text" placeholder="הזן מספר פלאפון" name="ILphone" required>
+                <br>
+                <label id="psw"><b>סיסמה</b></label>
+                <input type="password" placeholder="הזן סיסמה" name="password" required>
+                <br>
+                <label id="bday"><b>תאריך לידה</b></label>
+                <input type="date" name="bday" required>
+                <br>
+                <br>
+                <input type="submit" id="signInButton" class="button" value="צור">
+                <br>
+                <br>
+            </div>
+        </form>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('signin.static', filename='js/signin.js') }}"></script>
+{% endblock %}

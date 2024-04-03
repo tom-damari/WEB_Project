@@ -1,0 +1,58 @@
+/* HOME PAGE */
+
+#shopContainer {
+    padding-top: 40px;
+}
+#shopCeramics, #shopJewellery {
+    height: 500px; /* Set a fixed height to control the size of the container */
+    width: 500px; /* Set a fixed width to control the size of the container */
+    display: inline-flex;
+    flex-direction: column; /* Arrange items in a column layout */
+    background-position: center;
+    background-size: cover;
+    padding: 40px;
+    background-repeat: no-repeat;
+    transition: 0.3s ease;
+    margin-bottom: 30px;
+}
+#shopCeramics {
+    background-image: url('/static/img/products/hostingSet.jpeg');
+    margin-right: 10px;
+}
+#shopJewellery {
+    background-image: url('/static/img/jewellery/threeLongColorefulNecklesses.jpg');
+    margin-left: 10px;
+}
+#shopCeramics h1,
+#shopJewellery h1 {
+    color: #ffffff;
+    padding-bottom: 250px;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Vertically center the content */
+    text-align: center; /* Align the text to the center */
+}
+#shopCeramics button,
+#shopJewellery button {
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-end; /* Vertically center the content */
+    text-align: center; /* Align the text to the center */
+}
+
+/* MATCH SCREEN TO TABLET PLATFORM */
+@media (max-width: 799px) {
+    #shopCeramics, #shopJewellery {
+        height: 400px; /* Set a fixed height to control the size of the container */
+        width: 400px; /* Set a fixed width to control the size of the container */
+    }
+    #shopCeramics h1, #shopJewellery h1 {
+        padding-bottom: 100px;
+    }
+}
+
+/* MATCH SCREEN TO MOBILE PLATFORM */
+@media (max-width: 477px) {
+    #shopCeramics, #shopJewellery {
+        padding: 0 20px;
+        background-position: 55%;
+    }
+}

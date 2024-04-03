@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Catalog{% endblock %}
+
+{% block links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('catalog.static', filename='css/catalog.css') }}">
+{% endblock %}
+
+{% block main %}
+    <section id="search" class="section-p1">
+        {% if category == 'ceramics' %}
+            <h2 class="category">Ceramics</h2>
+        {% else %}
+            <h2 class="category">Jewellery</h2>
+        {% endif %}
+        <div id="sort-bar">
+            <select class="sort-selection">
+                <option value="all" onclick="window.location.href='/catalog/{{category}}'">ללא</option>
+                <option value="asc" onclick="window.location.href='/catalog/{{category}}/ascending'">מחיר, מהנמוך לגבוה</option>
+                <option value="desc" onclick="window.location.href='/catalog/{{category}}/descending'">מחיר, מהגבוה לנמוך</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="section-p2">
+        <div class="pro-container">
+            {% for item in items %}
+                {% if item.status == 'זמין' %}
+                    <div class="pro">
+                        <img src="{{ item.photoPath[0] }}" alt="" onclick="window.location.href='/product/{{category}}/{{item.productName}}'">
+                        <div class="des">
+                            <h4>₪ {{ item.price }}</h4>
+                        </div>
+                        <a href='/catalog/{{category}}/addItemToCart/{{item.productName}}'><i class="fa fa-shopping-cart cart shoppingCartIcon" aria-hidden="true"></i></a>
+                    </div>
+                {% else %}
+                    <div class="pro">
+                        <img src="{{ item.photoPath[0] }}" alt="" onclick="window.location.href='/product/{{category}}/{{item.productName}}'">
+                        <div class="des">
+                            <h4>₪ {{ item.price }}</h4>
+                            <h4 class="productStatus">SOLD OUT</h4>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+{% endblock %}

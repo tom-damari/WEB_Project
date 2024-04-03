@@ -1,0 +1,95 @@
+/* PURCHASE HISTORY PAGE */
+
+#my-account .container-upper-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+#my-account button {
+    align-self: start;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    align-content: start;
+}
+#my-account .account-details-hebrew{
+    padding: 20px;
+    text-align: right;
+}
+#my-account .account-details{
+    padding: 20px;
+    text-align: left;
+}
+#order-history h2 {
+    text-align: right;
+    font-size: 25px;
+    padding: 10px;
+    color: #685647;
+}
+#order-history .single-order-details {
+    border: 2px solid #a58c79;
+    padding: 10px;
+    margin: 14px;
+}
+#order-history .total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    text-wrap: none;
+}
+#order-history .pro-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-wrap: wrap;
+
+}
+#order-history .pro {
+    width: 17%;
+    min-width: 150px;
+    background-color: #ffffff;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.02);
+    margin: 2px;
+    transition: 0.2s ease; /*make the hover smooth*/
+    cursor: unset;
+
+
+}
+#order-history .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+#order-history .single-order-details .pro-container .pro .des {
+    display: flex;
+    flex-direction: column;
+}
+#order-history .single-order-details .pro-container .pro .des p {
+    font-size: 12px;
+    color: #444141;
+    align-content: center;
+}
+#order-history .single-order-details .pro-container .pro .des h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+    align-content: center;
+}
+#order-history .single-order-details span {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#order-history .single-order-details span h3 {
+    font-size: 25px;
+    padding: 5px 10px;
+}
+
+/* MATCH SCREEN TO TABLET PLATFORM */
+@media (max-width: 799px) {
+    #order-history .pro {
+        height: 50%;
+    }
+    #order-history .pro img {
+        height: 150px;
+    }
+}

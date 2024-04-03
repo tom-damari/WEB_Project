@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename='css/home.css') }}"/>
+{% endblock %}
+
+{% block home_navbar2 %}<li><a href="/home" class="active">בית</a></li>{% endblock %}
+
+{% block main %}
+    <section class="section-p1">
+        <div id="shopContainer">
+                <div id="shopCeramics">
+                    <h1>CERAMICS</h1>
+                    <a href='/catalog/ceramics/ascending'><button class="white">SHOP NOW</button></a>
+                </div>
+                <div id="shopJewellery" class="section-p1">
+                    <h1>JEWELLERY</h1>
+                    <a href='/catalog/jewellery/ascending'><button class="white">SHOP NOW</button></a>
+                </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p2 section-m">
+        <div class="newstext">
+            <h4>הרשמה לניוזלטר שלנו</h4>
+            <div class="msg"></div>
+        </div>
+        <form class="newsletterForm" method="POST" action="/home/newsletterRegister">
+            <div class="msg"></div>
+            <input type="email" name="email" placeholder="כתובת המייל שלך" autocomplete="">
+            <input type="submit" value="הרשמה">
+        </form>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('home.static', filename='js/home.js') }}"></script>
+{% endblock %}

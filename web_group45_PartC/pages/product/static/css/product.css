@@ -1,0 +1,86 @@
+/* PRODUCT PAGE */
+
+.pro-details { /* Single Product */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single-pro-img { /*all pictures group*/
+    width: 50%;
+    height: 50%;
+    margin: 30px 0;
+}
+.single-pro-img img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #685647;
+}
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+.pro-description{
+    padding-top: 30px;
+}
+.small-img-col {
+    flex-basis: 23%;
+    cursor: pointer;
+}
+.small-img {
+    width: 100%;
+    height: 80%;
+    flex-shrink: 1;
+    border-radius: 10px;
+    border: 1px solid #685647;
+}
+.single-pro-details {
+    width: 100%;
+    padding-bottom: 100px;
+}
+.single-pro-details input {
+    margin-top: 20px;
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.single-pro-details input:focus {
+    outline: none;
+}
+.single-pro-details button {
+    background-color: #a98c62;
+    color: #ffffff;
+}
+.small-img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Apply shadow when hovering */
+}
+.productStatus {
+    color: #24d72d;
+}
+
+#contact a {
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+/* MATCH SCREEN TO MOBILE PLATFORM */
+@media (max-width: 477px) {
+    /* PRODUCT PAGE */
+    .pro-details {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5px;
+    }
+
+    .pro-details .single-pro-img {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .pro-details .single-pro-details {
+        width: 100%;
+    }
+}

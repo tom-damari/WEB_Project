@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block page_head_meta %}
+            <base href="/">
+            <meta charset="UTF-8">
+            <meta name="auther" content="Tom Damari & Ora Shavit">
+            <meta name="description" content="Online shopping website of ceramics and jewellery">
+            <meta name="keywords" content="ceramics, jewellery, studio, pottery">
+        {% endblock %}
+
+        {% block links %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        {% endblock %}
+
+        <title>{% block title %}Base{% endblock %}</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                {% block navbar1 %}
+                    <div>
+                        <ul id="navbar1">
+                            {% if session.get('logged_in') %}
+                                <li><a href="/account" class="leftIcons"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                            {% else %}
+                                <li><a href="/login" class="leftIcons"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                            {% endif %}
+                            <li><a href="/cart" class="leftIcons"><i class="fa fa-shopping-bag" aria-hidden="true"></i><img src="" class="logo" alt=""></a></li>
+                            <li><a href="/home" class="logo">Michal's Studio</a></li>
+                            <li><i id="mobileBar" class="fa fa-bars"></i></li>
+                        </ul>
+                    </div>
+                {% endblock %}
+
+                {% block navbar2 %}
+                    <div>
+                        <ul id="navbar2">
+                            <a href="#"><i id="mobileSideExit" class="far fa-times"></i></a>
+                            {% block cart_navbar2 %}<li><a href="/cart"><i id="mobileSideCart" class="fa fa-shopping-bag"></i><img src="" class="logo" alt=""></a></li>{% endblock %}
+                            {% block about_navbar2 %}<li><a href="/about">אודות</a></li>{% endblock %}
+                            {% block contact_navbar2 %}<li><a href="/contact">צור קשר</a></li>{% endblock %}
+                            {% block jewellery_navbar2 %}<li><a href="/catalog/jewellery/ascending">תכשיטים</a></li>{% endblock %}
+                            {% block ceramics_navbar2 %}<li><a href="/catalog/ceramics/ascending">קרמיקה</a></li>{% endblock %}
+                            {% block home_navbar2 %}<li><a href="/home">בית</a></li>{% endblock %}
+                        </ul>
+                    </div>
+                {% endblock %}
+            </nav>
+        </header>
+
+        {% block main %}{% endblock %}
+
+        {% block footer %}
+            <footer class="section-p2">
+                <div class="col">
+                    <h4>פרטי התקשרות</h4>
+                    <p>
+                        <strong class="footer-label">כתובת</strong>
+                        ישראל היימן 9, נס ציונה
+                    </p>
+                    <p>
+                        <a href="https://api.whatsapp.com/send?phone=972544428090&text=%D7%9E%D7%99%D7%9B%D7%9C%20%D7%93%D7%9E%D7%90%D7%A8%D7%99%20%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95%20%D7%9C%D7%A7%D7%A8%D7%9E%D7%99%D7%A7%D7%94%20%D7%95%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%D7%9D"><i id="whatsappIcon" class="fab fa-whatsapp"></i></a>
+                        <strong class="footer-label">מספר פלאפון</strong>
+                        0544428090
+                    </p>
+                    <p>
+                        <strong class="footer-label">שעות פעילות</strong>
+                        מוזמנים לבקר בכל יום בתיאום מראש
+                    </p>
+                    <div class="follow">
+                        <a href = "https://www.facebook.com/michal.damari"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/michaldamari_ceramic_studio/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>עלינו</h4>
+                    <a href="/about">אודות</a>
+                    <a href="/contact">צור קשר</a>
+                </div>
+                <div class="col">
+                    <h4>החשבון שלי</h4>
+                    <a href="/login">התחבר</a>
+                    <a href="/signin">הירשם</a>
+                    <a href="/cart">עגלת הקניות</a>
+                    {% if session.get('logged_in') %}
+                    <a href="/account">היסטוריית הזמנות</a>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    <img class="logo" src="/static/img/pics/circledLogo.png" alt="logo">
+                </div>
+                <div class="copyright">
+                    <p>© 2024 Tom Damari & Ora Shavit | All rights reserved</p>
+                </div>
+            </footer>
+        {% endblock %}
+
+        {% block script %}
+            <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        {% endblock %}
+
+    </body>
+
+</html>

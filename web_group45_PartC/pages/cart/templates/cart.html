@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}"/>
+{% endblock %}
+
+{% block cart_navbar2 %}<li><a href="/cart"><i id="mobileSideCart" class="fa fa-shopping-bag"></i><img src="" class="logo" alt=""></a></li>{% endblock %}
+
+{% block main %}
+    <section id="cart" class="section-p1">
+        {% if session.get('logged_in') %}
+            {% if session.get('user_cart_items')|length > 0 %}
+                <table>
+                    <thead>
+                    <tr>
+                        <th>הסר</th>
+                        <th>סה"כ</th>
+                        <th>כמות</th>
+                        <th>מחיר</th>
+                        <th>מוצר</th>
+                        <th>תמונה</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in session['user_cart_items'] %}
+                        {% if item.status == 'זמין' %}
+                            <tr>
+                                <div class="productName" data-parameter="{{ item.productName }}"></div>
+                                <td><i class="far fa-times-circle" onclick="window.location.href='/cart/removeProduct/{{cart_data._id}}/{{item.productName}}'"></i></td>
+                                <td>₪ {{ item.sumPrice }}</td>
+                                {% if item.maxAmount > 1 %}
+                                    <td>
+                                        <div class="quantity-control">
+                                            <i class="fa fa-minus-square" onclick="window.location.href='/cart/removeItem/{{cart_data._id}}/{{item.productName}}'"></i>
+                                            <input type="number" class="quantity-input" value="{{ item.quantity }}" readonly>
+                                            <i class="fa fa-plus-square" onclick="window.location.href='/cart/addItem/{{cart_data._id}}/{{item.productName}}'"></i>
+                                        </div>
+                                    </td>
+                                {% else %}
+                                    <td><output>{{ item.quantity }}</output></td>
+                                {% endif %}
+                                <td>₪ {{ item.price }}</td>
+                                <td>{{ item.productName }}</td>
+                                <td><img src="{{ item.photoPath }}" alt=""></td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div>
+                    <span>
+                        <h3> :סך ביניים </h3>
+                        <h3>₪ {{ cart_data.totalAmount }}</h3>
+                    </span>
+                    <button class="normal" onclick="window.location.href='/cart/checkout/{{cart_data._id}}'">מעבר לקופה</button>
+                </div>
+            {% else %}
+                <div class="section-p2">
+                    <p>סל הקניות שלך ריק כרגע</p>
+                    <p><i class="fa fa-heart heart-icon"></i>היט איט </p>
+                </div>
+            {% endif %}
+        {% else %}
+            {% if session.get('guest_cart_items')|length > 0 %}
+                <table>
+                    <thead>
+                    <tr>
+                        <th>הסר</th>
+                        <th>סה"כ</th>
+                        <th>כמות</th>
+                        <th>מחיר</th>
+                        <th>מוצר</th>
+                        <th>תמונה</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in session['guest_cart_items'] %}
+                        {% if item.status == 'זמין' %}
+                            <tr>
+                                <td><i class="far fa-times-circle" onclick="window.location.href='/cart/removeProduct/{{cart_data._id}}/{{item.productName}}'"></i></td>
+                                <td>₪ {{ item.sumPrice }}</td>
+                                {% if item.maxAmount > 1 %}
+                                    <td>
+                                        <div class="productName" data-parameter="{{ item.productName }}"></div>
+                                        <div class="quantity-control">
+                                            <i class="fa fa-minus-square" onclick="window.location.href='/cart/removeItem/{{cart_data._id}}/{{item.productName}}'"></i>
+                                            <input type="number" class="quantity-input" value="{{ item.quantity }}" readonly>
+                                            <i class="fa fa-plus-square" onclick="window.location.href='/cart/addItem/{{cart_data._id}}/{{item.productName}}'"></i>
+                                        </div>
+                                    </td>
+                                {% else %}
+                                    <td><output>{{ item.quantity }}</output></td>
+                                {% endif %}
+                                <td>₪ {{ item.price }}</td>
+                                <td>{{ item.productName }}</td>
+                                <td><img src="{{ item.photoPath }}" alt=""></td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div>
+                    <span>
+                        <h3> :סך ביניים </h3>
+                        <h3>₪ {{ cart_data.totalAmount }}</h3>
+                    </span>
+                    <button class="normal" onclick="window.location.href='/cart/checkout/{{cart_data._id}}'">מעבר לקופה</button>
+                </div>
+            {% else %}
+                <div class="section-p2">
+                    <p>סל הקניות שלך ריק כרגע</p>
+                    <p><i class="fa fa-heart heart-icon"></i>היט איט </p>
+                </div>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}
+
+<div id="element" data-parameter="{{ is_logged_in }}"></div>
+<div id="cartID" data-parameter="{{ cart_data._id }}"></div>
+<div id="cartItems" data-parameter="{{ cart_data.items }}"></div>
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('cart.static', filename='js/cart.js') }}"></script>
+{% endblock %}

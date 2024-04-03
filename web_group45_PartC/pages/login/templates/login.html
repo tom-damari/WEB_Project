@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}LogIn{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}">
+    <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- include the Google Platform JavaScript library-->
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+{% endblock %}
+
+{% block main %}
+    <section class="section-p1">
+
+        {% if message %}
+            <br>
+            <p class="error">{{ message }}</p>
+            <br>
+        {% endif %}
+
+        <form id="form-login" class="form" method="POST" action="/login">
+                <div class="content2">
+                    <h2>התחברות</h2>
+                    <div class="msg"></div>
+                    <br>
+                    <label id="mail"><b>כתובת מייל</b></label>
+                    <input type="email" placeholder="הזן כתובת מייל" name="email" autocomplete="on" required>
+                    <br>
+                    <label id="psw"><b>סיסמה</b></label>
+                    <input type="password" placeholder="הזן סיסמה" name="password" required>
+                    <a id="forgot-psw">?שכחת את הסיסמה שלך</a>
+                    <br>
+                    <br>
+                    <input type="submit" id="logInButton" class="button" value="התחבר">
+                    <a href="/signin" id="signInOption">הרשמה</a>
+                    <br>
+                    <br>
+                    <div class="g-signin2" data-height="30" data-onsuccess="onGoogleSignIn"></div>
+                </div>
+            </form>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
+{% endblock %}

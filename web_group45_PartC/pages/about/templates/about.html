@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block about_navbar2 %}<li><a href="/about" class="active">אודות</a></li>{% endblock %}
+
+{% block main %}
+<section class="section-p1">
+            <h2 id="showcase">ברוכים הבאים לסטודיו שלי</h2>
+            <div class="content">
+                <p>
+                    <br>
+                    .שמי מיכל בעלת סטודיו לקרמיקה ותכשיטים בנס ציונה
+                    <br>
+                    .עבודותיי מיוצרות עם המון אהבה והקשבה לחומר הן באובניים והן בעבודת יד
+                    <br>
+                    .העבודות נמכרות בחנות הסטודיו שלי וכמו כן במספר חנויות מעצבים באזור המרכז
+                    <br>
+                    .כל עבודה מיוחדת במינה ובסדרות קטנות
+                    <br>
+                    <br>
+                    :אשמח לארח אתכם אצלי בסטודיו וכמובן שניתן לבצע הזמנה אישית דרך הווטסאפ
+                    <br>
+                    <a id="whatsappLinkIcon" href="https://api.whatsapp.com/send?phone=972544428090&text=%D7%9E%D7%99%D7%9B%D7%9C%20%D7%93%D7%9E%D7%90%D7%A8%D7%99%20%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95%20%D7%9C%D7%A7%D7%A8%D7%9E%D7%99%D7%A7%D7%94%20%D7%95%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%D7%9D"><i class="fab fa-whatsapp"></i></a>
+                    <br>
+                    <br>
+                    !מוזמנים לעקוב אחרי ולקבל עדכונים חמים בלייב
+                    <br>
+                    :חפשו אותי ברשתות החברתיות
+                    <br>
+                    <a id="facebookIcon" href = "https://www.facebook.com/michal.damari"><i class="fab fa-facebook-f"></i></a>
+                    <a id="instagramIcon" href="https://www.instagram.com/michaldamari_ceramic_studio/"><i class="fab fa-instagram"></i></a>
+                </p>
+            </div>
+            <div id="videos">
+                <iframe src="https://www.instagram.com/reel/CwpTd3To4-5/embed/" width="250" height="350" scrolling="no" allowfullscreen id="video1"></iframe>
+                <iframe src="https://www.instagram.com/reel/CjKFvwWo2zD/embed/" width="250" height="350" scrolling="no" allowfullscreen id="video2"></iframe>
+            </div>
+        </section>
+{% endblock %}

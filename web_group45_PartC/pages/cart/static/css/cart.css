@@ -1,0 +1,106 @@
+/* CART PAGE */
+
+#cart h2 {
+    padding-bottom: 30px;
+}
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+#cart table img {
+    width: 70px;
+}
+#cart table td:nth-child(1) i {
+    font-size: 18px;
+    cursor: pointer;
+    padding-top: 5px;
+}
+#cart table td:nth-child(1) i:hover {
+    color: #2873bd;
+}
+#cart table td:nth-child(5) {
+    width: 250px;
+    text-align: center;
+    white-space: normal; /* Allow text wrapping */
+    padding-right: 10px;
+}
+#cart table td:nth-child(2),
+#cart table td:nth-child(3),
+#cart table td:nth-child(4),
+#cart table td:nth-child(6) {
+    width: 150px;
+    text-align: center;
+}
+#cart table td:nth-child(3) input {
+    width: 60px;
+    padding: 10px 5px 10px 15px;
+}
+#cart table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+#cart table tbody tr td {
+    padding-top: 15px;
+    font-size: 15px;
+}
+#cart table tbody tr td text {
+    flex-wrap: wrap;
+}
+#cart span {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#cart span h3 {
+    font-size: 30px;
+    padding: 20px 0 10px 10px;
+}
+#cart button {
+    width: fit-content;
+    align-self: flex-end;
+    margin-bottom: 70px;
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-control i {
+    font-weight: 10;
+    font-size: 20px;
+    margin: 0 10px; /* Add some space between the icons */
+    justify-content: center;
+    color: #685647;
+    cursor: pointer;
+}
+.quantity-control input {
+    align-content: center;
+    text-align: center;
+    color: #222222;
+    background-color: #ffffff;
+    justify-content: center;
+    padding: 2px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    border: solid 1px #222222;
+}
+
+
+/* MATCH SCREEN TO TABLET PLATFORM */
+@media (max-width: 799px) {
+    #cart table {
+        min-width: 450px;
+        margin: 10px;
+    }
+}
+
+/* MATCH SCREEN TO MOBILE PLATFORM */
+@media (max-width: 477px) {
+    /* CART PAGE */
+    #cart table {
+        overflow-x: auto; /*scroll table to the sides*/
+    }
+}

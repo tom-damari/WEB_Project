@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block links %}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('contact.static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block contact_navbar2 %}<li><a href="/contact" class="active">צור קשר</a></li>{% endblock %}
+
+{% block main %}
+    <section id="contactUs" class="section-p1">
+        {% if message %}
+            <p class="error">{{ message }}</p>
+        {% endif %}
+        <form id="form-contactUs" class="form" method="POST" action="/contact/form">
+            <div class="content2">
+                <h2>מוזמנים להשאיר הודעה</h2>
+                <div class="msg"></div>
+                <br>
+                <label id="Flname"><b>שם מלא</b></label>
+                <input type="text" placeholder="הזן שם מלא" name="Flname" autocomplete="on" required>
+                <br>
+                <label id="mail"><b>כתובת מייל</b></label>
+                <input type="email" placeholder="הזן כתובת מייל" name="email" autocomplete="on" required>
+                <br>
+                <label id="pnum"><b>מספר טלפון</b></label>
+                <input type="text" placeholder="הזן מספר טלפון" name="ILphone" required>
+                <br>
+                <label id="massage"><b>הודעה</b></label>
+                <textarea id="msgBox" placeholder="ההודעה שלך" name="massage" required></textarea>
+                <br>
+                <br>
+                <input type="submit" class="button" value="שלח">
+            </div>
+        </form>
+    </section>
+    <section id="contact-details" class="section-p2">
+        <div class="details">
+            <h2>ביקור בסטודיו שלי</h2>
+            <h3>דרכי התקשרות</h3>
+            <div id="contact-information">
+                <li>
+                    <i class="fal fa-map"></i>
+                    <p>Israel Haiman 9, Nes Ziona, Israel</p>
+                </li>
+                <li>
+                    <i class="far fa-envelope"></i>
+                    <p>michaldam66@gmail.com</p>
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+972-544428090 </p>
+                </li>
+                <li>
+                    <i class="far fa-clock"></i>
+                    <p>מוזמנים לבקר בכל יום, בתיאום מראש</p>
+                </li>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.2836435930058!2d34.7815672!3d31.926055700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502b6ced3ac1fe3%3A0x53a4fe9a8ed3f2e7!2z15nXqdeo15DXnCDXlNeZ15nXntefIDksINeg16Eg16bXmdeV16DXlA!5e0!3m2!1siw!2sil!4v1708190954220!5m2!1siw!2sil" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p2 section-m">
+        <div class="newstext">
+            <h4>הרשמה לניוזלטר שלנו</h4>
+            <div class="msg"></div>
+        </div>
+        <form class="newsletterForm" method="POST" action="/contact/newsletterRegister">
+            <input type="email" name="email" placeholder="כתובת המייל שלך" autocomplete="">
+            <input type="submit" value="הרשמה">
+        </form>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{super()}}
+    <script src="{{ url_for('contact.static', filename='js/contact.js') }}"></script>
+{% endblock %}
