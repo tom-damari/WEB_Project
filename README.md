@@ -1,6 +1,12 @@
 # Jewelry & Ceramics Studio – Full-Stack Web Application
 A responsive full-stack web application developed for a real client, showcasing a boutique studio for handmade ceramics and jewelry.
 
+Course: Web-Based Information Systems  
+Department of Industrial Engineering and Management, Ben-Gurion University
+Submission Date: April 3, 2024
+Team: Tom Damari, Ora Shavit
+Supervisor: Dr. Arseni Partzovski 
+
 ## Project Highlights
 - Tailored to real business needs of a local studio owner
 - Built with **HTML, CSS, JavaScript, Python (Flask), and MongoDB**
