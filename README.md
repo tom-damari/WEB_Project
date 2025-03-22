@@ -1,41 +1,88 @@
-<div dir="rtl">
+# Jewelry & Ceramics Studio – Web Design (Part A + B)
 
-## תיאור הפרויקט 
-עיצבנו אתר עבור לקוחה בעלת עסק של קרמיקה ותכשיטים ייחודיים ועל פי הצרכים שלה יצרנו את האתר. השתדלנו לעשות זאת ברמה גבוהה ובסטנדרטים הדומים לאלו של האתרים בארץ. ניתן לצפות ולהשתמש באתר עם כל סוגי המסכים (מחשב, אייפד ופלאפון)
+This project was designed and implemented as part of a web development course, for a real client who owns a boutique ceramics and jewelry studio.  
+We created the site according to her needs, with attention to quality, responsiveness, and standards similar to professional websites in Israel.  
+The website is fully responsive and works across desktop, tablet, and mobile devices.
 
-## הנחות 
-- הלקוחות שלנו מישראל ולכן יצרנו את האתר בעברית ואפשרנו הזנה רק של טלפון ישראלי.
-- בשלב זה לא ראינו צורך להוסיף את האובייקטים מכיוון שאין עדיין חיבור לbackend ולכן אין צורך עדיין לשמור פרטים. יוצג בחלק ג'.
+---
 
-## הנחיות למשתמש 
-בכל אחד מהעמודים קיים סרגל ניווט עליון 'nav' וסרגל ניווט תחתון 'footer' כך שבכל שלב נוכל לעבור לעמודים הרצויים בקלות.
+## Assumptions
+- The target audience is Israeli; the site is in Hebrew and accepts only valid Israeli phone numbers.
+- Backend integration and object storage will be implemented in Part C.
+- Minimum user age for registration is 12.
 
-## עמודים
-### עמוד הבית
-קיימת אפשרות בעמוד הבית לעבור לעמודים אחרים ע"י שימוש בסרגל העליון – בשימוש באייפד/אייפון הסרגל יהיה סרגל ניווט צידי. בכל שלב ישנה אפשרות לחזור לעמוד הבית על ידי לחיצה על 'בית' או על 'michal studio'. בעמוד ניתן לבחור אחת מבין 2 הקטגוריות – קרמיקה או תכשיטים. בנוסף, ישנה אפשרות להירשם לניוזלטר למטרות שיווק ומבצעים: נכניס את כתובת המייל שלנו בקלט ולאחר מכן נלחץ על כפתור 'הרשמה'.
-### התחברות
-כל משתמש יכול להיכנס לעמוד זה על מנת לבצע תהליך התחברות לחשבון משתמש, ניתן יהיה לאפס סיסמה עבור משתמש קיים. לאחר ההתחברות לחשבון נעבור אוטומטית לעמוד החשבון האישי שלנו 'purchase_history'.
-- תהליך הכניסה באמצעות גוגל - יעבוד כאשר נרצה להשיק את האתר סופית, ונשיג את הclient id של גוגל.
-### הרשמה
-כל משתמש יכול להיכנס לעמוד זה כדי לבצע תהליך יצירת חשבון משתמש חדש.
-נניח כי מתבצע אימות של כתובת המייל עבור חשבון משתמש קיים (ניישם בחלק ג') ואז תופיע בירוק הודעת השלמת פעולת האיפוס בהצלחה. 
-- הגבלנו את גיל המינימום לגיל 12 (אנחנו מניחות שהלקוחות הנרשמים יהיו כנים לגבי תאריך הלידה שלהם).
-### איפוס סיסמה
-העמוד הזה מיועד למשתמשים בעלי חשבון קיים אשר מעוניינים לאפס את הסיסמה שלהם. נאפס את הסיסמה באמצעות כתובת המייל של החשבון הקיים במערכת.
-### עגלת הקניות
-כל סוג משתמש יכול להיכנס לעמוד זה כדי לצפות בפריטים שהוסיף לעגלת הקניות שלו בין אם מדובר במשתמש מחובר או אורח. ניתן להסיר מוצר מסל הקניות ולצפות במוצרים שהוספנו עד כה.
-### היסטוריית רכישות (עמוד חשבון המשתמש)
-מיועד עבור לקוח מחובר בלבד, מדובר בעמוד החשבון האישי של הלקוח ובתוכו קיימת היסטוריית הרכישות שלו. בעבור משתמש מחובר, אייקון החשבון בסרגל העליון יפנה ישירות להיסטוריית הזמנות של הלקוח.
-### קניות (תכשיטים וקרמיקה)
-כל סוג משתמש יכול להיכנס לעמוד זה במטרה לצפות בקטלוג מוצרי הקרמיקה המוצעים למכירה, להיכנס לעמוד של המוצר עצמו ולהוסיף לסל ישירות מהקטלוג.
-ניתן להוסיף מוצר לסל קניות, לעבור לעמוד מורחב של כל מוצר- לטובת המחשה בלבד יצרנו עמוד למוצר הראשון משמאל בלבד, ויש אפשרות לסינון ומיון המוצרים בדף. 
-- יישום של הסינון והמיון לא יתבצעו בחלק זה של הפרויקט.
-### מוצר (תכשיט וקרמיקה)
-ניתן לצפות בתמונות שונות של המוצר ולהוסיף מוצר זה לסל הקניות. חשוב לציין כי כל מוצר מקרמיקה הינו ייחודי במינו ולכן ישנה אופציה להוסיף אך ורק כמות של מוצר בודד לסל הקניות בניגוד לתכשיטים.
-### צור קשר
-ניתן ליצור קשר עם בעלת החנות ע"י מילוי פרטים שנמצאים בטופס ושליחת ההודעה. בנוסף, קיימת מפה עם מיקום הסטודיו עבור לקוחות שמעוניינים לבקר בחנות או בסטודיו.
-### אודות
-דף זה משמש לקבלת מידע אודות העסק. בדף קישורים לכל הרשתות החברתיות ולווטסאפ של בעלת העסק. הפעלת כל קישור מתבצעת על ידי לחיצה על האייקון המתאים. 
-כמו כן, ניתן להיכנס לסרטונים שמציגים תהליך הכנת כלים מקרמיקה של בעלת העסק בסטודיו על ידי לחיצה על הסרטון עצמו.
+---
 
-</div>
+## User Experience
+- A fixed top navigation (`nav`) and bottom footer appear on all pages for easy access to all sections of the site.
+- On mobile and tablet, a sidebar menu replaces the top nav for better usability.
+
+---
+
+## Pages Overview
+
+### Home
+- Includes navigation to all other pages.
+- Users can choose between two product categories: **Ceramics** and **Jewelry**.
+- Newsletter sign-up form is available with email input and a submission button.
+
+---
+
+### Login
+- Users can log in to their account or reset their password.
+- After login, users are redirected to their personal account page (`purchase_history`).
+- Google login will be implemented after deployment using a valid Google Client ID.
+
+---
+
+### Registration
+- New users can create an account.
+- Email uniqueness validation will be implemented in Part B.
+- Success and error messages are displayed in green and red, respectively.
+
+---
+
+### Password Reset
+- For existing users who wish to reset their password via email.
+
+---
+
+### Shopping Cart
+- Accessible to both guest and registered users.
+- Users can remove items and view current items in their cart.
+
+---
+
+### Purchase History (User Account)
+- Accessible only to logged-in users.
+- Displays a list of previous orders.
+- The account icon in the nav bar redirects to this page for authenticated users.
+
+---
+
+### Catalog (Jewelry & Ceramics)
+- All users can browse products and view item details.
+- Only the first product (on the left) has a full product page for demonstration.
+- Products can be added directly to the cart from the catalog.
+- Sorting/filtering features are **not** implemented in this phase.
+
+---
+
+### Product Page
+- Displays images and detailed info for a selected product.
+- **Ceramic items are limited to one unit each** due to their uniqueness.
+- Quantity restrictions apply only to ceramics, not to jewelry.
+
+---
+
+### Contact
+- Users can send messages via a contact form.
+- An embedded map shows the studio’s location for in-person visits.
+
+---
+
+### About
+- Provides background info about the business.
+- Links to social media and WhatsApp.
+- Embedded videos showcase the ceramic-making process at the studio.
+
